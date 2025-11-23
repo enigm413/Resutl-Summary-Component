@@ -16,7 +16,7 @@ The component displays an intuitive split-card interface featuring:
 
 ### Project Preview
 
-![Project Preview](./assets/screenshots/desktop-preview.png)
+![Project Preview](./public/assets/screenshots/desktop-preview.png)
 
 ## Features
 
