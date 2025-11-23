@@ -45,11 +45,10 @@
       hsla(256, 72%, 46%, 1),
       hsla(256, 72%, 46%, 0.5)
     );
-    margin: 0 auto;
-    width: 65%;
-    padding: 4rem 3.2rem;
-    border-radius: 75%;
-    margin-bottom: 4rem;
+    margin: 0 auto 4rem auto;
+    width: 12.8rem;
+    padding: 2.4rem 3.6rem;
+    border-radius: 50%;
     box-shadow: 0 4rem 4rem hsla(256, 72%, 46%, 0.5);
   }
 
@@ -64,8 +63,8 @@
     font-size: 1.4rem;
   }
 
-  .comment-wrapper {
-    padding: 0 2rem;
+  .final-score-wrapper {
+    margin-bottom: 3.6rem;
   }
 
   .comment-title {
@@ -75,6 +74,12 @@
   }
 
   .comment-description {
-    line-height: 1.5;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 620px) {
+    .result-card {
+      padding: 3.2rem 1.2rem;
+    }
   }
 </style>
