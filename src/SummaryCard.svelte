@@ -6,30 +6,25 @@
   // Define the Necessary Component
   import SummaryItem from "./SummaryItem.svelte";
 
-  // Define the state
-  let summaryList = $state([]);
-
   // Define the function to Fetch Data
   async function fetchData() {
     const response = await fetch("./assets/data.json");
     const data = await response.json();
-    summaryList = [...data];
+    return data;
   }
-
-  // Define Side Effect to Load the Data
-  $effect(() => {
-    fetchData();
-  });
 </script>
 
 <!-- Define Structure Of Summary Card Component -->
 <div class="summary-card">
   <h2 class="summary-title">Summary</h2>
   <ul class="summary-list">
-    <!--Each Block to Iterate Summary Item  -->
-    {#each summaryList as summaryItem (summaryItem.category)}
-      <SummaryItem {...summaryItem} />
-    {/each}
+    <!-- Await Block To Asynchronous Code -->
+    {#await fetchData() then summaryList}
+      <!--Each Block to Iterate Summary Item  -->
+      {#each summaryList as summaryItem (summaryItem.category)}
+        <SummaryItem {...summaryItem} />
+      {/each}
+    {/await}
   </ul>
 
   <button class="btn">Continue</button>
